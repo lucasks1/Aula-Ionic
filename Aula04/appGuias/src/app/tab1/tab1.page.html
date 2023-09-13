@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Calculadora de Cachorro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+   <ion-img src="https://fofuxo.com.br/_upload/galleries/2013/03/28/dogue-argentino-dog-argentino-515500dc38249.jpg" alt="5px"></ion-img>
+   <ion-item>
+   <ion-input [(ngModel)]="idade" type="text" >Informe a Idade Canina: </ion-input>
+
+  </ion-item>
+<ion-card>
+
+  <ion-button (click)="resultado()">Enviar</ion-button>
+  <ion-button (click) ="limpar()" colo="danger">Limpar</ion-button>
+
+</ion-card>
+
+{{multiplicacao}}
+  
+  </ion-content>
