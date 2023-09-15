@@ -7,29 +7,31 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
-<h1>Calcule seu IMC </h1>
 
-<ion-content padding fixed>
+  <h1>Calcule seu IMC </h1>
 
-
-  <ion-item><h5>Informe o intervalo entre os numeros que deseja sortear:</h5></ion-item>
- 
-  <ion-item col-12>
-    <ion-label fixed>Altura</ion-label>
-    <ion-input type="number" [(ngModel)]="num1" min="1" max="99999"></ion-input>
-  </ion-item>
+  <ion-content padding fixed>
 
 
-  <ion-item col-12>
-    <ion-label fixed>Peso</ion-label>
-    <ion-input type="number" [(ngModel)]="num2"></ion-input>
-  </ion-item>
+    <ion-item>
+      <h5>Informe o intervalo entre os numeros que deseja sortear:</h5>
+    </ion-item>
+
+    <ion-item col-12>
+      <ion-label fixed>Altura</ion-label>
+      <ion-input type="number" [(ngModel)]="num1" min="1" max="99999"></ion-input>
+    </ion-item>
 
 
-   <ion-button full color="dark" (click)="random()"> Calcular</ion-button>
-   <ion-button full color="dark" (click)="limpar()"> Limpar</ion-button>
+    <ion-item col-12>
+      <ion-label fixed>Peso</ion-label>
+      <ion-input type="number" [(ngModel)]="num2"></ion-input>
+    </ion-item>
 
 
-  <h1>{{ sorteado }}</h1>
-</ion-content>
+    <ion-button full color="dark" (click)="random()"> Calcular</ion-button>
+    <ion-button full color="dark" (click)="limpar()"> Limpar</ion-button>
+
+
+    <h1>{{ sorteado }}</h1>
+  </ion-content>

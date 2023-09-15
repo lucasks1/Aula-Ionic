@@ -7,12 +7,14 @@
 </ion-header>
 
 
- 
+
 <ion-content padding fixed>
 
 
-  <ion-item><h5>Informe o intervalo entre os numeros que deseja sortear:</h5></ion-item>
- 
+  <ion-item>
+    <h5>Informe o intervalo entre os numeros que deseja sortear:</h5>
+  </ion-item>
+
   <ion-item col-12>
     <ion-label fixed>Inicial</ion-label>
     <ion-input type="number" [(ngModel)]="num1" min="1" max="99999"></ion-input>
@@ -24,9 +26,15 @@
     <ion-input type="number" [(ngModel)]="num2"></ion-input>
   </ion-item>
 
+  <ion-item col-12>
+    <ion-label fixed>Sortear</ion-label>
+    <ion-input type="number" [(ngModel)]="sorteando" min="1" max="99999"></ion-input>
+  </ion-item>
 
-   <ion-button full color="dark" (click)="random()"> Calcular</ion-button>
-   <ion-button full color="dark" (click)="limpar()"> Limpar</ion-button>
+
+  <ion-button full color="dark" (click)="random()"> Calcular</ion-button>
+  <ion-button full color="primary" (click)="resultado()">sortear</ion-button>
+  <ion-button full color="danger" (click)="limpar()"> Limpar</ion-button>
 
 
   <h1>{{ sorteado }}</h1>
