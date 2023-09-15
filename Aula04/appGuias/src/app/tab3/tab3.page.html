@@ -1,17 +1,35 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
-      Tab 3
+      Calculo do IMC
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+<h1>Calcule seu IMC </h1>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content padding fixed>
+
+
+  <ion-item><h5>Informe o intervalo entre os numeros que deseja sortear:</h5></ion-item>
+ 
+  <ion-item col-12>
+    <ion-label fixed>Altura</ion-label>
+    <ion-input type="number" [(ngModel)]="num1" min="1" max="99999"></ion-input>
+  </ion-item>
+
+
+  <ion-item col-12>
+    <ion-label fixed>Peso</ion-label>
+    <ion-input type="number" [(ngModel)]="num2"></ion-input>
+  </ion-item>
+
+
+   <ion-button full color="dark" (click)="random()"> Calcular</ion-button>
+   <ion-button full color="dark" (click)="limpar()"> Limpar</ion-button>
+
+
+  <h1>{{ sorteado }}</h1>
 </ion-content>

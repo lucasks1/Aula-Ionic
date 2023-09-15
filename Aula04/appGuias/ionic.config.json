@@ -1,0 +1,7 @@
+{
+  "name": "appGuias",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

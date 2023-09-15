@@ -7,21 +7,32 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  idade: string = "";
-  multiplicacao: number = 0;
-  total: number = 0;
-
-  constructor() { }
+  idade : number = 0;
+  num : number = 7;
+  total : number = 0;
 
 
+  constructor() {}
 
-  resultado() {
+  ngOnInit() {
+  }
 
-    this.multiplicacao = Number(this.idade) * 7;
+  enviar(){
+    this.total = this.idade * this.num;
 
   }
-  limpar() {
-this.idade = "";  
-  } 
 
+  limpar(){
+    this.total = 0;
+  }
+ 
+  
 }
+
+/* 3 funções:
+.parseInt(string) => converte string em int.
+.parseFloat(string) => converte valor em float.
+.String(num) => converte valor em String.
+         |
+   toast => message: "msg"
+   Alert              String(var) */

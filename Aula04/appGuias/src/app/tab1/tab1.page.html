@@ -1,24 +1,23 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title class="ion-text-center">
-      Calculadora de Cachorro
+      Calculadora Canina
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-   <ion-img src="https://fofuxo.com.br/_upload/galleries/2013/03/28/dogue-argentino-dog-argentino-515500dc38249.jpg" alt="5px"></ion-img>
-   <ion-item>
-   <ion-input [(ngModel)]="idade" type="text" >Informe a Idade Canina: </ion-input>
+  <ion-card>
+    <ion-img
+      src="https://segredosdomundo.r7.com/wp-content/uploads/2021/09/cachorro-preto-quais-sao-as-principais-racas-e-suas-caracteristicas-6.jpg"
+      alt="">
+    </ion-img>
+    <ion-item>
+      <ion-input label="Idade do seu cachorro:" type="number" [(ngModel)]="idade"></ion-input>
+    </ion-item>
+    <h1>A idade humana do seu cachorro é {{total}}.</h1>
+  </ion-card>
 
-  </ion-item>
-<ion-card>
-
-  <ion-button (click)="resultado()">Enviar</ion-button>
-  <ion-button (click) ="limpar()" colo="danger">Limpar</ion-button>
-
-</ion-card>
-
-{{multiplicacao}}
-  
-  </ion-content>
+  <ion-button expand="block" color="primary" (click)="enviar()">Enviar</ion-button>
+  <ion-button expand="block" color="primary" (click)="limpar()">Limpar</ion-button>
+</ion-content>
