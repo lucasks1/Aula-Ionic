@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteRule ^usuario/?$ api_usuario.php
+RewriteRule ^usuario/([0-9]+)?$ api_usuario.php?id=$1
+
+RewriteRule ^produto/?$ api_produto.php
+RewriteRule ^produto/([0-9]+)?$ api_produto?id=$1
