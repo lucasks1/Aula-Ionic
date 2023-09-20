@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot="end" (click)="novoProduto()">Novo+</ion-button>
+    <ion-title>Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let p of produto">
+      <ion-item-options side="start">
+        <ion-item-option color="danger" (click)="remover(p.codigo)">Deletar</ion-item-option>
+        <ion-item-option color="success" (click)="atualizar(p)">Atualizar</ion-item-option>
+      </ion-item-options>
+      <ion-item>{{ p.descricao }}</ion-item>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

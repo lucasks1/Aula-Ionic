@@ -20,7 +20,15 @@ const routes: Routes = [
   {
     path: 'addusuario',
     loadChildren: () => import('./pagina/addusuario/addusuario.module').then( m => m.AddusuarioPageModule)
+  },  {
+    path: 'produtos',
+    loadChildren: () => import('./pagina/produtos/produtos.module').then( m => m.ProdutosPageModule)
   },
+  {
+    path: 'add-produto',
+    loadChildren: () => import('./pagina/add-produto/add-produto.module').then( m => m.AddProdutoPageModule)
+  },
+
 
 ];
 

@@ -38,17 +38,17 @@ export class AddusuarioPage implements OnInit {
 
   }
 
-  enviando(form: NgForm){
+  enviando(form: NgForm) {
     //console.log(form.value); // pegar a informação e enviar no console
     const usuario = form.value;
-    if (this.atualizar){
-      this.service.update(usuario, this.u.id).subscribe(response =>{
+    if (this.atualizar) {
+      this.service.update(usuario, this.u.id).subscribe(response => {
         // fechar o modal
-          this.modalCtrl.dismiss(response);
-        })
+        this.modalCtrl.dismiss(response);
+      })
     } else {
-       this.service.create(usuario).subscribe(response =>{
-      // fechar o modal
+      this.service.create(usuario).subscribe(response => {
+        // fechar o modal
         this.modalCtrl.dismiss(response);
       })
     }

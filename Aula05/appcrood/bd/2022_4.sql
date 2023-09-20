@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Set-2023 às 16:39
+-- Tempo de geração: 20-Set-2023 às 16:24
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -39,7 +39,7 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`codigo`, `descricao`, `quantidade`, `valor`) VALUES
-(1, 'index', 10, '100');
+(6, 'perao', 10, '2');
 
 -- --------------------------------------------------------
 
@@ -61,15 +61,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `cpf`, `senha`, `nivel`) VALUES
-(1, 'Administrador', 'admin@hotmail.com', '000.000.000-00', '123', 'Administrador'),
-(2, 'Marcela Siqueira', 'marcela@gmail.com', '111.122.111-77', '123', 'Operador'),
 (3, 'Bianca Freitas', 'paloma2@hotmail.com', '265.265.656-56', '123', 'Tesoureiro'),
-(4, 'Paloma Freitas', 'paloma3@hotmail.com', '265.265.656-58', '123', 'Tesoureiro'),
-(5, 'Mauricio', 'mauricio@hotmail.com', '031.554.514-54', '123', 'Operador'),
 (6, 'Sabrina ', 'sabrinasilva@hotmail.com', '000.000.000-01', '1234', 'Operador'),
-(8, 'rj', '', '', '', ''),
-(9, 'rj', '', '', '', ''),
-(10, 'lucas lemos da silva', 'llucassilva@gmailmail.com', '153.999.222.12', '123', 'Administrador');
+(10, 'lucas lemos da silva', 'llucassilva@gmailmail.com', '153.999.222.10', '123', 'Administrador'),
+(12, 'leandra ', 'jansen@gmail.com', '123', '123', 'super visor');
 
 --
 -- Índices para tabelas despejadas
@@ -95,13 +90,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
