@@ -12,9 +12,17 @@
             $id = $con->real_escape_string($_GET['id']);
             $sql = $con->query("select * from usuarios where id = '$id'");
             $data = $sql->fetch_assoc();
-        }else{
-            $data = array();
+        }else if (isset($_GET['email'])){
+            $email = $con->real_escape_string($_GET['email']);
+            $sql = $con->query("select * from usuarios where email = '$email'");
+            $data = $sql->fetch_assoc();
+        }else if (){
             
+        }
+        
+        else{
+            $data = array();
+
             $sql = $con->query("select * from usuarios");
             while($d = $sql->fetch_assoc()){
                 $data[] = $d;

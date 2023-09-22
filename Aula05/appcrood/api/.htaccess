@@ -1,6 +1,18 @@
 RewriteEngine on
+#localiza dotos os registros
 RewriteRule ^usuario/?$ api_usuario.php
+#localiza registros pelo id
 RewriteRule ^usuario/([0-9]+)?$ api_usuario.php?id=$1
+
+>> Exemplo 1
+# localiza registro pelo email
+RewriteRule ^usuario/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})?$ api_usuario.php?email=$1 [L]
+>> Exemplo 2
+#Abaixo a mesma referencia de email, com o código gerado pelo chatgpt
+#RewriteRule ^usuario/([^/]+)/?$ api_usuario.php?email=$1 [L]
+
+# Localiza registro pelo CPF
+RewriteRule ^usuario/([^/]+)/?$ api_usuario.php?cpf=$1 [QSA]
 
 RewriteRule ^produtos/?$ api_produto.php
 RewriteRule ^produtos/([0-9]+)?$ api_produto.php?codigo=$1
