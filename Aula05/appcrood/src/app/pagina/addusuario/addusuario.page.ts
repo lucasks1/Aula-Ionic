@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { Usuario, UsuarioService } from 'src/app/servico/usuario.service';
 
 @Component({
@@ -24,7 +24,8 @@ export class AddusuarioPage implements OnInit {
   }
 
 
-  constructor(private modalCtrl: ModalController, private service: UsuarioService) { }
+  constructor(private modalCtrl: ModalController, private service: UsuarioService, 
+    private toastCtrl: ToastController) { }
 
   ngOnInit() {
 
@@ -41,7 +42,19 @@ export class AddusuarioPage implements OnInit {
   enviando(form: NgForm) {
     //console.log(form.value); // pegar a informação e enviar no console
     const usuario = form.value;
-    if (this.atualizar) {
+
+    if (this.dados.nome === '' || this.dados.nome === null) {
+      this.mensagem('preencha o nome');
+    } else if (this.dados.email === '' || this.dados.email === null) {
+      this.mensagem('preencha o email');
+    } else if (this.dados.cpf === '' || this.dados.cpf === null) {
+      this.mensagem('preencha o cpf');
+    } else if (this.dados.senha === '' || this.dados.senha === null) {
+      this.mensagem('preencha a senha');
+    } else if (this.dados.nivel === '' || this.dados.nivel === null) {
+      this.mensagem('preencha o nível');
+    }
+    else if (this.atualizar) {
       this.service.update(usuario, this.u.id).subscribe(response => {
         // fechar o modal
         this.modalCtrl.dismiss(response);
@@ -57,5 +70,14 @@ export class AddusuarioPage implements OnInit {
 
   fecharModal() {
     this.modalCtrl.dismiss();
+  }
+
+  mensagem(msg: string) {
+    this.toastCtrl.create({
+      message: msg,
+      duration: 2000
+    }).then(toast => {
+      toast.present();
+    })
   }
 }

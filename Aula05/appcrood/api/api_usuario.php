@@ -26,7 +26,11 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $data  = json_decode(file_get_contents("php://input"));
-        $sql = $con->query("insert into usuarios (nome, email, cpf, senha, nivel) values ('".$data->nome."','".$data->email."','".$data->cpf."','".$data->senha."','".$data->nivel."')");   
+
+        //~~~~Criptografando a senha
+        $senha = password_hash($data->senha, PASSWORD_DEFAULT);
+        //~~~~
+        $sql = $con->query("insert into usuarios (nome, email, cpf, senha, nivel) values ('".$data->nome."','".$data->email."','".$data->cpf."','".$senha."','".$data->nivel."')");   
         if($sql){
             $data->id = $con->insert_id;
             exit(json_encode($data));
@@ -40,8 +44,12 @@
         if(isset($_GET['id'])){
             // a função real_escape_string remove quaisquer caracteres especiais que possam interferir nas operações de consulta
             $id = $con->real_escape_string($_GET['id']);
+                    //~~~~Criptografando a senha
+
+            $senha = password_hash($data->senha, PASSWORD_DEFAULT);
+            //~~~~
             $data = json_decode(file_get_contents("php://input"));
-            $sql = $con->query("update usuarios set nome = '".$data->nome."', email = '".$data->email."', cpf = '".$data->cpf."',  senha = '".$data->senha."', nivel = '".$data->nivel."' where id = '$id'");
+            $sql = $con->query("update usuarios set nome = '".$data->nome."', email = '".$data->email."', cpf = '".$data->cpf."',  senha = '".$senha."', nivel = '".$data->nivel."' where id = '$id'");
             if($sql){
                 exit(json_encode(array('status'=> 'successo')));
             }else{

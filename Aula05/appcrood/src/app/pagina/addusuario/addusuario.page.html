@@ -1,7 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-button slot="end" (click)="fecharModal()">Fechar</ion-button>
-    <ion-title>{{ atualizar ? 'Atualizar Usuário ' : 'Novo Usuário' }}</ion-title>  </ion-toolbar>
+    <ion-title>{{ atualizar ? 'Atualizar Usuário ' : 'Novo Usuário' }}</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -27,5 +28,7 @@
       <ion-label position="floating">Nível</ion-label>
       <ion-input [(ngModel)]="dados.nivel" name="nivel"></ion-input>
     </ion-item>
-    <ion-button fill="outline" expand="block" type="submit">{{ atualizar ? 'Atualizar Usuário ' : 'Cadastrar Usuário' }}</ion-button>  </form>
+    <ion-button fill="outline" expand="block" type="submit">{{ atualizar ? 'Atualizar Usuário ' : 'Cadastrar Usuário' }}
+    </ion-button>
+  </form>
 </ion-content>
