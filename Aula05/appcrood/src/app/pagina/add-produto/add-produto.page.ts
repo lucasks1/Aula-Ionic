@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
+import { firstValueFrom } from 'rxjs';
 import { ProdutosService  , Produto} from 'src/app/servico/produtos.service';
 
 @Component({
@@ -20,10 +21,11 @@ dados = {
   descricao: '',
   quantidade: '',
   valor: '',
+  serie: '',
 }
 
-  constructor(private modalCtrl:ModalController, private service:ProdutosService
-    ) { }
+  constructor(private modalCtrl:ModalController, private service:ProdutosService,
+    private toastCtrl: ToastController) { }
 
   ngOnInit() {
     if(this.p){
@@ -32,23 +34,41 @@ dados = {
     }
   }
 
-  enviando(form: NgForm) {
-    const usuario = form.value;
-    if (this.atualizar) {
-      this.service.update(usuario, this.p.codigo).subscribe(response => {
-        // fechar o modal
+  async enviando(form: NgForm) {
+    const produto = form.value;
+    if (!produto.descricao ||
+      !produto.quantidade ||
+      !produto.valor ||
+      !produto.serie){
+        this.mensagem('Por favor, preencha todos os campos');
+      }else if (this.atualizar) {
+      this.service.update(produto, this.p.codigo).subscribe(response => {
         this.modalCtrl.dismiss(response);
       })
-    } else {
-      this.service.create(usuario).subscribe(response => {
-        
-        this.modalCtrl.dismiss(response);
-      })
+    }else{
+      const serieExist = await firstValueFrom(this.service.getSerie(produto.serie));
+      if (serieExist) {
+        this.mensagem('Esta serie já existe.');
+      }else {
+        this.service.create(produto).subscribe(response => {
+          this.modalCtrl.dismiss(response);
+        })
+      }
     }
   }
 
   fecharModal() {
     this.modalCtrl.dismiss();
   }
+
+  mensagem(msg: string) {
+    this.toastCtrl.create({
+      message: msg,
+      duration: 2000
+    }).then(toast => {
+      toast.present();
+    })
+  }
+
   
 }

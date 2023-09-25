@@ -8,6 +8,7 @@ export interface Produto {
   descricao: string;
   quantidade: string;
   valor: string;
+  serie: string;
 }
 
 @Injectable({
@@ -33,5 +34,10 @@ export class ProdutosService {
   update(produto: Produto, id:any){
     return this.http.put(this.url + '/' + id, produto);
   }
+
+  getSerie(serie: any) {
+    return this.http.delete(this.url + '/' + serie);
+  }
+  
 
 }

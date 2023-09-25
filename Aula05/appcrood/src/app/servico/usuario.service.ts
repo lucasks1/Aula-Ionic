@@ -44,4 +44,8 @@ export class UsuarioService {
     return this.http.get(this.url + '/' + email);
 
 }
+getCPF(cpf: any){
+  return this.http.get(this.url + '/' + cpf);
+
+}
 }

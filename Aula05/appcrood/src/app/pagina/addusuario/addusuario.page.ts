@@ -43,6 +43,7 @@ export class AddusuarioPage implements OnInit {
   async enviando(form: NgForm) {
     //console.log(form.value); // pegar a informação e enviar no console
     const usuario = form.value;
+    const cpf = form.value;
 
     if (!usuario.nome ||
       !usuario.email ||
@@ -74,10 +75,16 @@ export class AddusuarioPage implements OnInit {
       })
     }
     else {
-      const emailExist = await firstValueFrom(this.service.getEmail(usuario.email))   ;
+      const emailExist = await firstValueFrom(this.service.getEmail(usuario.email));
+      const getCPF = await firstValueFrom(this.service.getCPF(usuario.cpf));
       if (emailExist) {
         this.mensagem('Este email já existe.');
       }
+
+      else if (getCPF) {
+        this.mensagem('Este CPF já existe.');
+      }
+      
       else {
         this.service.create(usuario).subscribe(response => {
           // fechar o modal
@@ -104,3 +111,4 @@ export class AddusuarioPage implements OnInit {
 
 
 }
+
