@@ -39,7 +39,9 @@ export class AddusuarioPage implements OnInit {
 
   }
 
-  enviando(form: NgForm) {
+
+
+  async enviando(form: NgForm) {
     //console.log(form.value); // pegar a informação e enviar no console
     const usuario = form.value;
 
@@ -47,14 +49,11 @@ export class AddusuarioPage implements OnInit {
       !usuario.email ||
       !usuario.cpf ||
       !usuario.senha ||
-      !usuario.nivel
-
-
-    ) {
-      this.mensagem('preencha o nome');
+      !usuario.nivel) {
+      this.mensagem('Por favor preencha todos os campos');
 
     }
-    
+
     /*  Geito maior de digitar
 
     else if (this.dados.email === '' || this.dados.email === null) {
@@ -72,12 +71,20 @@ export class AddusuarioPage implements OnInit {
         // fechar o modal
         this.modalCtrl.dismiss(response);
       })
-    } else {
-      this.service.create(usuario).subscribe(response => {
-        // fechar o modal
-        this.modalCtrl.dismiss(response);
-      })
     }
+    else {
+      const emailExist = await this.service.getEmail(usuario.email).toPromise();
+      if (emailExist) {
+        this.mensagem('Este email já existe.');
+      }
+      else {
+        this.service.create(usuario).subscribe(response => {
+          // fechar o modal
+          this.modalCtrl.dismiss(response);
+        })
+      }
+    }
+
   }
 
 
