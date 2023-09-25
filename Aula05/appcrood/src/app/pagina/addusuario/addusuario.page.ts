@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ModalController, ToastController } from '@ionic/angular';
+import { firstValueFrom } from 'rxjs';
 import { Usuario, UsuarioService } from 'src/app/servico/usuario.service';
 
 @Component({
@@ -39,8 +40,6 @@ export class AddusuarioPage implements OnInit {
 
   }
 
-
-
   async enviando(form: NgForm) {
     //console.log(form.value); // pegar a informação e enviar no console
     const usuario = form.value;
@@ -66,6 +65,8 @@ export class AddusuarioPage implements OnInit {
       this.mensagem('preencha o nível');
     }
     */
+
+
     else if (this.atualizar) {
       this.service.update(usuario, this.u.id).subscribe(response => {
         // fechar o modal
@@ -73,7 +74,7 @@ export class AddusuarioPage implements OnInit {
       })
     }
     else {
-      const emailExist = await this.service.getEmail(usuario.email).toPromise();
+      const emailExist = await firstValueFrom(this.service.getEmail(usuario.email))   ;
       if (emailExist) {
         this.mensagem('Este email já existe.');
       }
