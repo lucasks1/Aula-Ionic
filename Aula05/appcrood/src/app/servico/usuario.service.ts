@@ -39,4 +39,9 @@ export class UsuarioService {
     return this.http.put(this.url + '/' + id, usuario);
   }
 
+  // metodo para buscar emial
+  getEmail(email: any) {
+    return this.http.get(this.url + '/' + email);
+
+}
 }

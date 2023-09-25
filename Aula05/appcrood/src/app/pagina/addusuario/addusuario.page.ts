@@ -24,7 +24,7 @@ export class AddusuarioPage implements OnInit {
   }
 
 
-  constructor(private modalCtrl: ModalController, private service: UsuarioService, 
+  constructor(private modalCtrl: ModalController, private service: UsuarioService,
     private toastCtrl: ToastController) { }
 
   ngOnInit() {
@@ -43,9 +43,21 @@ export class AddusuarioPage implements OnInit {
     //console.log(form.value); // pegar a informação e enviar no console
     const usuario = form.value;
 
-    if (this.dados.nome === '' || this.dados.nome === null) {
+    if (!usuario.nome ||
+      !usuario.email ||
+      !usuario.cpf ||
+      !usuario.senha ||
+      !usuario.nivel
+
+
+    ) {
       this.mensagem('preencha o nome');
-    } else if (this.dados.email === '' || this.dados.email === null) {
+
+    }
+    
+    /*  Geito maior de digitar
+
+    else if (this.dados.email === '' || this.dados.email === null) {
       this.mensagem('preencha o email');
     } else if (this.dados.cpf === '' || this.dados.cpf === null) {
       this.mensagem('preencha o cpf');
@@ -54,6 +66,7 @@ export class AddusuarioPage implements OnInit {
     } else if (this.dados.nivel === '' || this.dados.nivel === null) {
       this.mensagem('preencha o nível');
     }
+    */
     else if (this.atualizar) {
       this.service.update(usuario, this.u.id).subscribe(response => {
         // fechar o modal
@@ -80,4 +93,6 @@ export class AddusuarioPage implements OnInit {
       toast.present();
     })
   }
+
+
 }
