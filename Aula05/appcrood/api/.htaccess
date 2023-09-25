@@ -3,6 +3,7 @@ RewriteEngine on
 RewriteRule ^usuario/?$ api_usuario.php
 #localiza registro pelo chave id
 RewriteRule ^usuario/([0-9]+)?$ api_usuario.php?id=$1
+
 #>> Exemplo 1
 # localiza registro pelo email
 RewriteRule ^usuario/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})?$ api_usuario.php?email=$1 [L]
@@ -14,3 +15,4 @@ RewriteRule ^usuario/([^/]+)/?$ api_usuario.php?cpf=$1 [QSA]
 
 RewriteRule ^produto/?$ api_produto.php
 RewriteRule ^produto/([0-9]+)?$ api_produto.php?codigo=$1
+RewriteRule ^produto/([^/]+)/?$ api_produto.php?serie=$1 [QSA]

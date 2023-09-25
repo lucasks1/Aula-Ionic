@@ -11,8 +11,6 @@ import { ProdutosService  , Produto} from 'src/app/servico/produtos.service';
 })
 export class AddProdutoPage implements OnInit {
 
-
-
 @Input () p!: Produto;
 
 atualizar = false;
