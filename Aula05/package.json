@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "ng2-input-mask": "^0.0.7",
+    "text-mask-core": "^5.1.2"
+  }
+}

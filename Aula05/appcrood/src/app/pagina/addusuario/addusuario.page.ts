@@ -24,6 +24,7 @@ export class AddusuarioPage implements OnInit {
     nivel: '',
   }
 
+  
 
   constructor(private modalCtrl: ModalController, private service: UsuarioService,
     private toastCtrl: ToastController) { }
@@ -54,18 +55,7 @@ export class AddusuarioPage implements OnInit {
 
     }
 
-    /*  Geito maior de digitar
-
-    else if (this.dados.email === '' || this.dados.email === null) {
-      this.mensagem('preencha o email');
-    } else if (this.dados.cpf === '' || this.dados.cpf === null) {
-      this.mensagem('preencha o cpf');
-    } else if (this.dados.senha === '' || this.dados.senha === null) {
-      this.mensagem('preencha a senha');
-    } else if (this.dados.nivel === '' || this.dados.nivel === null) {
-      this.mensagem('preencha o nível');
-    }
-    */
+   
 
 
     else if (this.atualizar) {
