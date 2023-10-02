@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot="end" (click)="fecharModal()">Fechar</ion-button>
+    <ion-title class="ion-text-center">{{ atualizar ? 'Atualizar Produto ' : 'Novo Produto' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #f="ngForm" (ngSubmit)="enviando(f)">
+    <ion-item>
+      <ion-label position="floating">Descricao</ion-label>
+      <ion-input [(ngModel)]="dados.descricao" name="descricao"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Quantidade</ion-label>
+      <ion-input [(ngModel)]="dados.quantidade" name="quantidade"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Valor</ion-label>
+      <ion-input [(ngModel)]="dados.valor" name="valor"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Serie</ion-label>
+      <ion-input [(ngModel)]="dados.serie" name="serie"></ion-input>
+    </ion-item>
+
+    <ion-button fill="outline" expand="block" type="submit">{{ atualizar ?
+      'Atualizar Produto ' : 'Cadastrar Produto' }}</ion-button>
+  </form>
+</ion-content>

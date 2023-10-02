@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>login de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-icon name="log-in"></ion-icon>
+    <form #f="ngform" (ngSubmit)="logar(f)">
+      <ion-item>
+        <ion-label positon="floating">Email</ion-label>
+        <ion-input [(ngModel)]="dados.email" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label positon="floating">Senha</ion-label>
+        <ion-input [(ngModel)]="dados.Senha" name="senha" type="password"></ion-input>
+      </ion-item>
+      <p></p>
+      <ion-button fill="outline" expand="black" type="submit">Enviar</ion-button>
+    </form>
+
+</ion-content>

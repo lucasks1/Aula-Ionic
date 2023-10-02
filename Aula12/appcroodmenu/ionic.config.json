@@ -1,0 +1,7 @@
+{
+  "name": "appcroodmenu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

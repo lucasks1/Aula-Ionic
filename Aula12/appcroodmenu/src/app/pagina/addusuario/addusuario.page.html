@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot="end" (click)="fecharModal()">Fechar</ion-button>
+    <ion-title>{{ atualizar ? 'Atualizar Usuário ' : 'Novo Usuário' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <form #f="ngForm" (ngSubmit)="enviando(f)">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input  [(ngModel)]="dados.nome" name="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="dados.email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cpf</ion-label>
+      <ion-input [(ngModel)]="dados.cpf" name="cpf"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input [(ngModel)]="dados.senha" name="senha" type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nível</ion-label>
+      <ion-input [(ngModel)]="dados.nivel" name="nivel"></ion-input>
+    </ion-item>
+    <ion-button fill="outline" expand="block" type="submit">{{ atualizar ? 'Atualizar Usuário ' : 'Cadastrar Usuário' }}</ion-button>
+
+  </form>
+</ion-content>
