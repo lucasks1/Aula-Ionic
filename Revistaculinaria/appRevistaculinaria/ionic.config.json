@@ -1,7 +1,0 @@
-{
-  "name": "appRevistaculinaria",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

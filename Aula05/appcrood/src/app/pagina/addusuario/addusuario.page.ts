@@ -132,6 +132,8 @@ export class AddusuarioPage implements OnInit {
       toast.present();
     })
   }
+
+  
 }
 
 

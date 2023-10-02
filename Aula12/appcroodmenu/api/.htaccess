@@ -1,0 +1,18 @@
+RewriteEngine on
+RewriteRule ^usuario/?$ api_usuario.php
+RewriteRule ^usuario/([0-9]+)?$ api_usuario.php?id=$1
+# esta linha abaixo está fazendo a passagem do email e da senha para o navegador, de forma que possa ser inserido
+# localhost/usuario/email/senha
+RewriteRule ^usuario/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/([a-zA-Z0-9]+)/?$ api_usuario.php?email=$1&senha=$2 [L]
+# localhost/usuario/email
+RewriteRule ^usuario/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})?$ api_usuario.php?email=$1 [L]
+# Localiza registro pelo CPF
+RewriteRule ^usuario/([^/]+)/?$ api_usuario.php?cpf=$1 [QSA]
+
+
+
+
+RewriteRule ^produto/?$ api_produto.php
+RewriteRule ^produto/([0-9]+)?$ api_produto.php?codigo=$1
+# Localiza registro pela série
+RewriteRule ^produto/([^/]+)/?$ api_produto.php?serie=$1 [QSA]
