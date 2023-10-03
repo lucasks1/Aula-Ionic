@@ -1,0 +1,6 @@
+RewriteEngine on
+
+RewriteRule ^receita/?$ api_receitas.php
+
+RewriteRule ^receita/([0-9]+)?$ api_receitas.php?id=$1
+RewriteRule ^receita/([^/]+)/?$ api_receitas.php?categoria=$1 [L]

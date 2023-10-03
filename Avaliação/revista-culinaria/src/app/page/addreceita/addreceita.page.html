@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-button slot="end" (click)="fecharModal()">Fechar</ion-button>
+    <ion-title>{{ atualizar ? 'Atualizar receita' : 'Nova receita'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+    <form #f="ngForm" (ngSubmit)="enviando(f)">
+      <ion-item>
+        <ion-label position="floating">Descrição</ion-label>
+        <ion-input [(ngModel)]="dados.descricao" name="descricao"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Categoria</ion-label>
+        <ion-input [(ngModel)]="dados.categoria" ngModel name="categoria"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">ingredientes</ion-label>
+        <ion-input [(ngModel)]="dados.ingredientes" name="ingredientes" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Preparo</ion-label>
+        <ion-input [(ngModel)]="dados.preparo" name="preparo" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Cheff</ion-label>
+        <ion-input [(ngModel)]="dados.cheff" name="cheff"></ion-input>
+      </ion-item>
+      <ion-button fill="outline" expand="block" type="submit">{{ atualizar ? 'Atualizar Receita ' : 'Cadastrar Receita' }}</ion-button>
+    </form>
+  
+</ion-content>
