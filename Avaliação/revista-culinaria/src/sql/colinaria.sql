@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Out-2023 às 16:25
+-- Tempo de geração: 04-Out-2023 às 13:46
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -37,6 +37,17 @@ CREATE TABLE `receita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Extraindo dados da tabela `receita`
+--
+
+INSERT INTO `receita` (`id`, `descricao`, `categoria`, `ingredientes`, `preparo`, `cheff`) VALUES
+(3, 'Carbonara', 'refeição', 'massa fresca , beicon, ovo , queijo parmesao', 'fogao', 'pier'),
+(4, 'coxinha', 'lanche', 'massa', 'frito', 'pier'),
+(5, 'Sandei', 'sobremesa', 'sorvete', 'frizer', 'pier'),
+(6, 'Vichisoaz', 'sopa', 'Legumes e lentilha', 'fogao', 'pier'),
+(8, 'SRYBNETN', 'sopa', 'rvbng', 'rgtrnt', 'aha');
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -54,7 +65,7 @@ ALTER TABLE `receita`
 -- AUTO_INCREMENT de tabela `receita`
 --
 ALTER TABLE `receita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
