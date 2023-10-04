@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'addimagem',
+    loadChildren: () => import('./page/addimagem/addimagem.module').then( m => m.AddimagemPageModule)
+  },
+  {
+    path: 'imagem',
+    loadChildren: () => import('./page/imagem/imagem.module').then( m => m.ImagemPageModule)
+  },
 ];
 
 @NgModule({
