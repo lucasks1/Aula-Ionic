@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ModalController, ToastController } from '@ionic/angular';
 import { firstValueFrom } from 'rxjs';
-import { Produto, ProdutosService } from 'src/app/servico/produtos.service';
+import { Produto, ProdutosService } from 'src/app/service/produtos.service';
 
 @Component({
   selector: 'app-addproduto',

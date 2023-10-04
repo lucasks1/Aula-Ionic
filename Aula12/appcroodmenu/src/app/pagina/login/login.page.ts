@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NavController, ToastController } from '@ionic/angular';
 import { firstValueFrom } from 'rxjs';
-import { UsuariosService } from 'src/app/servico/usuarios.service';
+import { UsuariosService } from 'src/app/service/usuarios.service';
 
 
 @Component({

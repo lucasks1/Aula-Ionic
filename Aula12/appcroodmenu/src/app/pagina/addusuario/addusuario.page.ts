@@ -1,9 +1,9 @@
-import { UsuariosService } from './../../servico/usuarios.service';
+import { UsuariosService } from '../../service/usuarios.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ModalController, ToastController } from '@ionic/angular';
 import { firstValueFrom } from 'rxjs';
-import { Usuario } from 'src/app/servico/usuarios.service';
+import { Usuario } from 'src/app/service/usuarios.service';
 
 @Component({
   selector: 'app-addusuario',

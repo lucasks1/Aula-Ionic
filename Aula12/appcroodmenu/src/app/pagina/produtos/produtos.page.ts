@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, ToastController } from '@ionic/angular';
-import { Produto, ProdutosService } from 'src/app/servico/produtos.service';
+import { Produto, ProdutosService } from 'src/app/service/produtos.service';
 import { AddprodutoPage } from '../addproduto/addproduto.page';
 
 @Component({

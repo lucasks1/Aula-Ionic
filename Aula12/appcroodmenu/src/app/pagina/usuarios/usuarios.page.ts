@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, ToastController } from '@ionic/angular';
-import { Usuario, UsuariosService } from 'src/app/servico/usuarios.service';
+import { Usuario, UsuariosService } from 'src/app/service/usuarios.service';
 import { AddusuarioPage } from '../addusuario/addusuario.page';
 
 @Component({
@@ -74,9 +74,4 @@ export class UsuariosPage implements OnInit {
       }).then(toast => {toast.present();})
     })
   }
-
-
-
-
-
 }
