@@ -16,7 +16,7 @@ export interface Receita{
 
 export class ReceitaService {
 
-  private url = 'http://localhost/cheff/receita'
+  private url = 'http://localhost/API/cheff/receita'
 
   constructor(private http: HttpClient) { }
 

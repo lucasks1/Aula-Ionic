@@ -35,7 +35,7 @@ export class AddreceitaPage implements OnInit {
 
   async enviando(from: NgForm) {
     const receita = from.value;
-    if (!receita.descicao ||
+    if (!receita.descricao || 
       !receita.categoria ||
       !receita.ingredientes ||
       !receita.preparo ||
