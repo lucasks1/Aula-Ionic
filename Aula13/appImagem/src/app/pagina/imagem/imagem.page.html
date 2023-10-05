@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title class="ion-text-center">imagem</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item-sliding *ngFor="let i of imagem">
+      <ion-item>
+        {{i.id}} - {{i.nome }}
+       </ion-item>
+       <img src="assets/{{i.path}}" alt="">
+    </ion-item-sliding>
+  </ion-list>>
+</ion-content>

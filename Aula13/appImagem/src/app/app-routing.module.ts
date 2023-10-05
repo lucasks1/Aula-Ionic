@@ -8,16 +8,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'imagem',
     pathMatch: 'full'
   },
   {
-    path: 'addimagem',
-    loadChildren: () => import('./page/addimagem/addimagem.module').then( m => m.AddimagemPageModule)
-  },
-  {
     path: 'imagem',
-    loadChildren: () => import('./page/imagem/imagem.module').then( m => m.ImagemPageModule)
+    loadChildren: () => import('./pagina/imagem/imagem.module').then( m => m.ImagemPageModule)
   },
 ];
 
