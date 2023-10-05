@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ImagemService, Imagem} from 'src/app/service/imagem.service';
+import { ImagemService, Imagem } from 'src/app/service/imagem.service';
 import { ModalController, ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-imagem',
@@ -14,9 +14,9 @@ export class ImagemPage implements OnInit {
 
   ngOnInit() {
     this.service.getAll().subscribe(
-      response =>{
+      response => {
         this.imagem = response;
-        //console.log(response);
+        console.log(response);
       }
     )
   }
