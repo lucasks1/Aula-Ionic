@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Aula Ionic
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="card-background-page">
+  <ion-card>
+    <img src="assets/saude.jpg" width="100%" />
+    <div class="card-title">Senac Saúde</div>
+    <div class="card-subtitle">Cuidando de você</div>
+  </ion-card>
+
+
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+
+
+        <ion-item (click)="exibirSobre()" class="ion-activated">
+          <!-- (click)="exibirSobre()" -->
+          <div class="ion-text-center">
+            <img src="assets/em-formacao.png">
+            <h3>Sobre</h3>
+          </div>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item (click)="exibirVacinacao()" class="ion-activated">
+          <!-- (click)="exibirVacinacao()" -->
+          <div class="ion-text-center">
+            <img src="assets/calendario.png">
+            <h3>Calendário</h3>
+          </div>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-item (click)="exibirOutras()" class="ion-activated">
+          <!-- (click)="exibirOutras()" -->
+          <div class="ion-text-center">
+            <img src="assets/vacina.png">
+            <h3>Outras</h3>
+          </div>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item href="#" class="ion-activated">
+          <div class="ion-text-center">
+            <img src="assets/contato.png">
+            <h3>Contato</h3>
+          </div>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
