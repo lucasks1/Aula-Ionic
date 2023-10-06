@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'outras',
     loadChildren: () => import('./page/outras/outras.module').then( m => m.OutrasPageModule)
   },
+  {
+    path: 'contato',
+    loadChildren: () => import('./page/contato/contato.module').then( m => m.ContatoPageModule)
+  },
   
 ];
 

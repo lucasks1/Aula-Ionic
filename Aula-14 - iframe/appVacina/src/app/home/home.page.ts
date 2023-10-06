@@ -21,5 +21,7 @@ export class HomePage {
   exibirOutras() {
     this.navCtrl.navigateForward('outras');
   }
-
+  exibirContato() {
+    this.navCtrl.navigateForward('contato');
+  }
 }
